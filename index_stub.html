@@ -1,0 +1,34 @@
+
+<!-- saved from url=(0053)http://mrl.cs.vsb.cz/people/gaura/gis/index_stub.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1250"></head><body><header>
+       
+		
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		  crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+		  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		  crossorigin=""></script>
+        <style>
+            #mapid { height: 100vh; }
+        </style>
+    </header>
+    
+        <div id="mapid"></div>
+
+        <script>
+                var mymap = L.map('mapid').setView([49.853, 18.525], 16);
+
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWljaGFsOTUiLCJhIjoiY2s4YWszcG0zMDJ5czNlcGk4ZWJhZG1qbCJ9.EGbpqGDr5_SrJE9kestrJw', {
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    maxZoom: 18,
+                    id: 'mapbox.streets',
+                    accessToken: 'pk.eyJ1IjoibWljaGFsOTUiLCJhIjoiY2s4YWszcG0zMDJ5czNlcGk4ZWJhZG1qbCJ9.EGbpqGDr5_SrJE9kestrJw'
+                }).addTo(mymap);
+
+                var imageUrl = './pt000023_transparent.png',
+                    imageBounds = [[49.8503485151751, 18.519789305650857], [49.855761841292576, 18.526561303252464]];
+                L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
+        </script>
+    
+</body></html>
